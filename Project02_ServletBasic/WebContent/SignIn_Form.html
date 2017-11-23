@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html"; charset="UTF-8" />
+  	<title>Login</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -> jquery lib online -->
+    <script src="./JS/jquery-3.2.1.min.js"></script>
+    <script src="./JS/script.js"></script>
+    <link rel="stylesheet" href="./CSS/style.css">
+<!--2 dòng dưới, hỗ trợ bootstrat-->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  	<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'>
+</head>
+<body>
+	<!-- create a form login -->
+	<div class="workares">
+		<!-- Phương thức POST có tính bảo mật hơn vì dữ liệu gửi phải thông qua một form HTML nên nó bị ẩn,
+			 nghĩa là chúng ta không thể thấy các giá trị đó được.
+			 Phương thức GET là phương thức gửi dữ liệu thông qua đường dẫn URL nằm trên thanh địa chỉ của Browser. Server sẽ nhận đường dẫn đó và phân tích trả về kết quả cho bạn -->
+		<form class="login" id="registration_form">
+			<legend class="legend"><i class="fa fa-lock"></i> Sign In</legend>
+            <table>
+				<tr class="input">
+				    <td class="td1">Username: </td>
+                    <td><input type="text" class="form_text" id="form_username" required name="us"></td>
+                    <td><span class="error_form" id="username_error_message"></span></td>
+                    <!-- đoạn vb trong span k thay đổi đc ngoại trừ css -->
+				</tr>
+                <tr class="input">
+				    <td class="td1">Password: </td>
+                    <td><input type="password" class="form_text" id="form_password" required name="ps"></td>
+                    <td><span class="error_form" id="password_error_message"></span></td>
+				</tr>
+			</table>
+        <div id="thanhduoi">
+           <button style="margin-right: 40px; margin-left: 70px;" type="submit" class="submit1" value="Register" ><i class="fa fa-key"></i></button>
+           <button type="submit" class="submit1" value="Sign In" onclick="check(this.form)"><i class="fa fa-unlock"></i></button>
+           <a href="#">Forgot password?</a>
+        </div>
+        </form>
+	</div> <!-- end of workares -->
+   
+</body>

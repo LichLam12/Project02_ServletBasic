@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- URL match với program ở phía server side, cụ thể là serlet xử lý dl đc submit từ user
+	ở đây ta chỉ định URI là Add -->
+	<!-- Phương thức POST có tính bảo mật hơn vì dữ liệu gửi phải thông qua một form HTML nên nó bị ẩn,
+			 nghĩa là chúng ta không thể thấy các giá trị đó được.
+			 Phương thức GET là phương thức gửi dữ liệu thông qua đường dẫn URL nằm trên thanh địa chỉ của Browser. Server sẽ nhận đường dẫn đó và phân tích trả về kết quả cho bạn -->
+	
+	<!-- nên tránh điền kiểu absolute vào action="http://localhost:8080/Project02_ServletBasic/Add
+	vì server khác localhost của nó sẽ khác, k phải server nào kug là localhost, vậy nên tránh dùng absolute". 
+	Nên dùng relative URI, nhưng có khá nhìu loại
+		Relative to server root
+	1. action="/Add" k đc vì: request đc gửi trực tiếp đến serlet Add của server này (localhost:8080) 
+			chứ k gửi đến servlet context (Project02_ServletBasic)
+	2. action="Project02_ServletBasic/Add" chắc chắn chạy đúng nhưng khi đưa lên server khác tên của servlet context
+			 có thể thay đổi thì sao?
+		Relative to application root
+	1. Chính là @WebServlet("/Add") trong add.java, app server tự động nối context path của app vào URL trước đó
+	2. Tuy nhiên, Relative URL này k đc cc bởi giao thức HTML 
+	Cho nên trong java servlet, URL mapping sử dụng URL tùy thuộc vào app root
+	 -->
+	 	<!-- kiểu này là relative ti current URL, nó tự gắn current URL "http://localhost:8080/Project02_ServletBasic/" vào sau
+	HTML có hỗ trợ kiểu này mà k cần dùng anotation hỗ trợ nào -->
+	 <!-- thẻ form phải có tối thiểu 2 thuộc tính action và method -->
+	 
+	<form action="Add" method="Post">
+
+		a:<input name="a" type="text"/><br/>
+		b:<input name="b" type="text"/><br/>
+		<input type="submit" name="add" value="add">
+	</form>
+	
+	
+</body>
+</html>
+
+
+<!-- Vd: .../Add?a=100&b=21&add=add, ta có 3 parameter (a,b,add) cả 3 parameter đều đc chỉ định trong URL
+	Như vậy, với get request thì parameter đc chỉ định như 1 phần của URL 
+	Còn với Post thì...-->

@@ -1,0 +1,111 @@
+/*==Đoạn CSS đầu tiên là thiết lập các thuộc tính cơ bản cho website như kiểu chữ, màu chữ, size chữ, thêm box-sizing,…==*/
+* {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /*==Reset CSS==*/
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/*==Style cơ bản cho website==*/
+body {
+  background: url(http://subtlepatterns.com/patterns/sativa.png) repeat fixed;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+
+.login {
+  position: relative; /*==cố định li mà chúng ta hover, thiết lập nó với vị trí ta đặt ra-nguyên thủy, k so với bất cứ thẻ mẹ nào, form hay màn hình máy==*/
+  width: 550px;
+  height: 300px; 
+  margin: 150px auto 0 auto;
+  background: #fff;
+}
+
+.legend {
+  position: relative;
+  width: 100%;
+  display: block; /*Thành phần hiển thị như một khối, khi sử dụng giá trị block thành phần sẽ đứng một hàng độc lập so với thành phần trước và sau nó.*/
+  background: #FF7052;
+  padding: 20px;
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+/*Bức ảnh ẩn sau legend với độ trong suốt 0.06*/
+.legend:after { 
+  content: "";
+  background-image: url(http://simpleicon.com/wp-content/uploads/multy-user.png);
+  background-size: 120px 120px;
+  background-repeat: no-repeat;
+  background-position: 200px -16px;
+  opacity: 0.06;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute; /*==hình con nổi lên trên hình mẹ nó đã cố định==*/
+    /*== hình con thành kiểu absolute để nó luôn luôn nằm trong phạm vi hình mẹ (relative) ==*/
+}
+
+/*cột đầu tiên*/
+.td1{ 
+    margin-left: 40px;
+    padding: 10px 10px 10px 10px;
+    font-size: 17px;
+}
+
+/*cột 2: textbox nhập username và password*/
+.input {
+  position: relative;
+  margin: 15px auto;
+}
+.input input {
+  width: 100%;
+  padding: 10px 38px 10px 10px;
+  display: block;
+  margin: 10px 12px 10px 0px;
+  border: 1px solid #EDEDED;
+  border-radius: 4px;   /*bo lại chút xíu*/
+  transition: 0.2s ease-out; /*hiệu ứng chuyển đổi trong 0.2s
+    nhấn vào input-cột thứ 2-cột nhập user và pass sẽ thấy rõ hiệu ứng -> làm chuyển động text input đó*/
+  color: #808080;  /*bạc đen*/
+}
+.input input:focus {
+  padding: 10px 5px 10px 10px;
+  outline: 0;
+  border-color: #FF7052;
+}
+
+/*cột 3: phần tb ràng buộc của username và password*/
+.error_form {
+    color: red;
+    margin-left: 7px;
+}
+
+/*button submit đăng nhập*/
+.submit1 {
+  width: 72px;
+  height: 58px;
+  
+  margin: 20px 0px 0px 35px;
+  background: #fff;
+  border-radius: 100%;   /*bo tròn*/
+  border: 1px solid #FF7052;
+  color: #FF7052;
+  font-size: 25px;
+  cursor: pointer;  /*hiển thị con trỏ chuột khi di chuyển lên đối tượng*/
+  box-shadow: 0px 0px 0px 7px #fff; /*tạo bóng mờ để lộ ra ít phía dưới cho lạ*/
+  transition: 0.2s ease-out;
+}
+
+.submit1:hover,
+.submit1:focus {
+  background: #FF7052;
+  color: #fff;
+}
+#thanhduoi a{
+    margin-left: 70px;    
+}
